@@ -1,0 +1,23 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Hybrid determination methods}
+\author{David E. Hufnagel}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+To determine wether an individual is substantially admixed I first ran a STRUCTURE (version 2.3.4) analysis using all group size (k) values from 2 to 8 using all 1,344 \textit{Zea mays} individuals from Mexico.  I then used the resulting q-values in 
+the web Application, ``Structure Harvester'' (version 0.6.93)(http://taylor0.biology.ucla.edu/structureHarvester/), to determine the best fitting k value based on delta k: The second order rate of change of the likelihood.  The best fitting k was determined to be 3.  I then made a histogram of ``other teosinte attribution'' in R, which means I determined what subspecies the individual was by it's largest q-value attribution then, if it is a teosinte, added the q-value attribution of the remaining teosinte to the dataset used to make the histogram.  I decided based on the histogram that 25\% other attribution was the best threshold to use.  I then determined the most obvious admixed groups visually and set the criterion for inclusion into each group by falling into coordinate-based region surrounding the admixed populations.  There were 3 such groups assigned and the coordinate cutoffs are X, X and X respectively.
+
+\end{document}  
